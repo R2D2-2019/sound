@@ -11,17 +11,11 @@ namespace r2d2::sound {
      */
     class mp3_player_c : public sound_c {
     private:
-        hwlib::pin_out &volume_up_next_pin;
-        hwlib::pin_out &volume_down_prev_pin;
-        hwlib::pin_out &play_pause_mode_pin;
-        hwlib::pin_out &repeat_pin;
-        hwlib::pin_in &is_playing_pin;
-
-        int current_song = 0;
-        const static size_t amount_of_songs = 3;
-
-        std::array<const char *, amount_of_songs> songs{"song1", "song2",
-                                                        "song3"};
+        hwlib::pin_out &power_pin;
+        hwlib::pin_oc &volume_up_next_pin;
+        hwlib::pin_oc &volume_down_prev_pin;
+        hwlib::pin_oc &play_pause_mode_pin;
+        hwlib::pin_oc &repeat_pin;
 
         /**
          * This function initializes the mp3 player.
@@ -39,7 +33,7 @@ namespace r2d2::sound {
          * pressed.
          * @param pin The pin used for the press simulation.
          */
-        void press_for(unsigned int milliseconds, hwlib::pin_out &pin);
+        void press_for(unsigned int milliseconds, hwlib::pin_oc &pin);
 
         /**
          * This function uses the press_for function to output a long press
@@ -48,7 +42,7 @@ namespace r2d2::sound {
          * @internal
          * @param pin The pin you want to use for the long press.
          */
-        void long_press(hwlib::pin_out &pin);
+        void long_press(hwlib::pin_oc &pin);
 
         /**
          * This function uses the press_for function to output a short press
@@ -57,7 +51,7 @@ namespace r2d2::sound {
          * @internal
          * @param pin The pin you want to use for the short press.
          */
-        void short_press(hwlib::pin_out &pin);
+        void short_press(hwlib::pin_oc &pin);
 
     public:
         /**
@@ -73,10 +67,11 @@ namespace r2d2::sound {
          * @param is_playing_pin The pin you want to use to check if there is a
          * song playing.
          */
-        mp3_player_c(hwlib::pin_out &volume_up_next_pin,
-                     hwlib::pin_out &volume_down_prev_pin,
-                     hwlib::pin_out &play_pause_mode_pin,
-                     hwlib::pin_out &repeat_pin, hwlib::pin_in &is_playing_pin);
+        mp3_player_c(hwlib::pin_out &power_pin,
+                     hwlib::pin_oc &volume_up_next_pin,
+                     hwlib::pin_oc &volume_down_prev_pin,
+                     hwlib::pin_oc &play_pause_mode_pin,
+                     hwlib::pin_oc &repeat_pin);
         // virtual ~mp3_player_c();
 
         /**
@@ -88,21 +83,16 @@ namespace r2d2::sound {
         bool is_playing();
 
         /**
-         * This function gets the id of a sound.
+         * This function outputs the play command if there is no song playing.
          *
-         * @internal
-         * @param name The name of the you want to get the id of.
-         * @return A int containing the id of the given name.
          */
-        int get_id_by_name(const char *name) const;
+        virtual void power_on() override;
 
         /**
-         * This function starts a sound.
+         * This function outputs the pause command if there is a song playing.
          *
-         * @internal
-         * @param name The name of the sound you want to start.
          */
-        virtual void start(const char *name) override;
+        virtual void power_off() override;
 
         /**
          * This function outputs the play command if there is no song playing.

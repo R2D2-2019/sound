@@ -11,7 +11,19 @@ namespace r2d2::sound {
          *
          * @param name The name of the sound you want to play.
          */
-        virtual void start(const char *name) = 0;
+        virtual void start(const char *name) {};
+
+        /**
+         * This function turns on the mp3 player (Also starts music)
+         *
+         */
+        virtual void power_on() {};
+
+        /**
+         * This function pauses the sound if playing.
+         *
+         */
+        virtual void power_off() {};
 
         /**
          * This function resumes the sound if on pause.

@@ -8,5 +8,6 @@
 *.lss
 *.exe
 .idea/
+.vs/
 cmake*/
 
