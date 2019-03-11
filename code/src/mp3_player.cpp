@@ -1,7 +1,7 @@
 #include "mp3_player.hpp"
 
-#include <hwlib.hpp>
 #include <cstring>
+#include <hwlib.hpp>
 
 namespace r2d2::sound {
     mp3_player_c::mp3_player_c(hwlib::pin_out &power_pin,
@@ -43,11 +43,11 @@ namespace r2d2::sound {
     }
 
     void mp3_player_c::power_on() {
-        power_pin.write(true);
+        power_pin.write(1);
     }
 
     void mp3_player_c::power_off() {
-        power_pin.write(true);
+        power_pin.write(0);
     }
 
     void mp3_player_c::play() {
@@ -67,11 +67,14 @@ namespace r2d2::sound {
     }
 
     void mp3_player_c::volume_up() {
-        long_press(volume_up_next_pin);
     }
 
     void mp3_player_c::volume_down() {
         long_press(volume_down_prev_pin);
+    }
+
+    void mp3_player_c::toggle_repeat() {
+        short_press(repeat_pin);
     }
 
 } // namespace r2d2::sound

@@ -129,6 +129,12 @@ namespace r2d2::sound {
          *
          */
         virtual void volume_down() override;
+
+        /**
+         * This function toggles repeat.
+         *
+         */
+        virtual void toggle_repeat() override;
     };
 
 } // namespace r2d2::sound
