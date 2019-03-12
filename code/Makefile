@@ -20,5 +20,5 @@ SEARCH  := ../code/headers ../code/src
 # set REATIVE to the next higher directory 
 # and defer to the Makefile.due there
 RELATIVE := $(RELATIVE)../
-include $(RELATIVE)Makefile.native
+include $(RELATIVE)Makefile.due
 
