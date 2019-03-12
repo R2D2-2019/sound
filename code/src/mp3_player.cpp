@@ -27,27 +27,45 @@ namespace r2d2::sound {
         repeat_pin.write(true);
         pause();
     }
+
     void mp3_player_c::press_for(unsigned int milliseconds,
                                  hwlib::pin_oc &pin) {
-        pin.write(0);
+        pin.write(false);
         hwlib::wait_ms(milliseconds);
-        pin.write(1);
+        pin.write(true);
     }
 
-    void mp3_player_c::long_press(hwlib::pin_oc &pin) {
-        press_for(2000, pin);
+    void mp3_player_c::press_for(unsigned int milliseconds, hwlib::pin_oc &pin1,
+                                 hwlib::pin_oc &pin2) {
+        pin1.write(false);
+        pin2.write(false);
+        hwlib::wait_ms(milliseconds);
+        pin1.write(true);
+        pin2.write(true);
     }
 
     void mp3_player_c::short_press(hwlib::pin_oc &pin) {
         press_for(500, pin);
     }
 
+    void mp3_player_c::short_press(hwlib::pin_oc &pin1, hwlib::pin_oc &pin2) {
+        press_for(500, pin1, pin2);
+    }
+
+    void mp3_player_c::long_press(hwlib::pin_oc &pin) {
+        press_for(1500, pin);
+    }
+
+    void mp3_player_c::long_press(hwlib::pin_oc &pin1, hwlib::pin_oc &pin2) {
+        press_for(1500, pin1, pin2);
+    }
+
     void mp3_player_c::power_on() {
-        power_pin.write(1);
+        power_pin.write(true);
     }
 
     void mp3_player_c::power_off() {
-        power_pin.write(0);
+        power_pin.write(false);
     }
 
     void mp3_player_c::play() {
@@ -67,14 +85,14 @@ namespace r2d2::sound {
     }
 
     void mp3_player_c::volume_up() {
+        long_press(volume_up_next_pin, volume_down_prev_pin);
     }
 
     void mp3_player_c::volume_down() {
-        long_press(volume_down_prev_pin);
+        long_press(volume_up_next_pin);
     }
 
     void mp3_player_c::toggle_repeat() {
         short_press(repeat_pin);
     }
-
 } // namespace r2d2::sound

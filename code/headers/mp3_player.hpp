@@ -36,13 +36,16 @@ namespace r2d2::sound {
         void press_for(unsigned int milliseconds, hwlib::pin_oc &pin);
 
         /**
-         * This function uses the press_for function to output a long press
-         * command.
+         * This function simulates a 2 button press simultaniusly for a given
+         * amount of milliseconds.
          *
          * @internal
-         * @param pin The pin you want to use for the long press.
+         * @param milliseconds The amount of milliseconds you want the pins to
+         * be pressed.
+         * @param 2 pins used for the press simulation.
          */
-        void long_press(hwlib::pin_oc &pin);
+        void press_for(unsigned int milliseconds, hwlib::pin_oc &pin1,
+                       hwlib::pin_oc &pin2);
 
         /**
          * This function uses the press_for function to output a short press
@@ -52,6 +55,33 @@ namespace r2d2::sound {
          * @param pin The pin you want to use for the short press.
          */
         void short_press(hwlib::pin_oc &pin);
+
+        /**
+         * This function uses the press_for function to output a long press
+         * command for 2 pins at the same time.
+         *
+         * @internal
+         * @param 2 pins you want to use for the long press.
+         */
+        void short_press(hwlib::pin_oc &pin1, hwlib::pin_oc &pin2);
+
+        /**
+         * This function uses the press_for function to output a long press
+         * command.
+         *
+         * @internal
+         * @param pin The pin you want to use for the long press.
+         */
+        void long_press(hwlib::pin_oc &pin);
+
+        /**
+         * This function uses the press_for function to output a long press
+         * command for 2 pins at the same time.
+         *
+         * @internal
+         * @param 2 pins you want to use for the long press.
+         */
+        void long_press(hwlib::pin_oc &pin1, hwlib::pin_oc &pin2);
 
     public:
         /**

@@ -16,13 +16,28 @@
             "problemMatcher": [
                 "$gcc"
             ],
-
             "windows": {
                 "command": "bmptk-make run",
             },
-
             "linux": {
                 "command": "make",
+            }
+        },
+        {
+            "label": "bmptk-make clean",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/code"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "windows": {
+                "command": "bmptk-make clean",
+            },
+            "linux": {
+                "command": "clean",
             }
         },
         {
@@ -35,11 +50,9 @@
             "problemMatcher": [
                 "$gcc"
             ],
-
             "windows": {
                 "command": "bmptk-make clean build",
             },
-
             "linux": {
                 "command": "make clean build",
             }
@@ -54,11 +67,9 @@
             "problemMatcher": [
                 "$gcc"
             ],
-
             "windows": {
                 "command": "bmptk-make run",
             },
-
             "linux": {
                 "command": "make run",
             }
