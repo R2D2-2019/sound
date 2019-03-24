@@ -10,4 +10,4 @@
 .idea/
 .vs/
 cmake*/
-
+.vscode/ipch/*
