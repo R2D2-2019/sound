@@ -12,7 +12,6 @@ int main(void) {
         r2d2::uart_ports_c port = r2d2::uart_ports_c::uart1;
         auto c = r2d2::hardware_usart_c(9600, port);
         char cc;
-        int n = 0;
         // c.send()
         for (;;) {
             if (c.char_available()) {

@@ -1,3 +1,11 @@
+SEARCH             += ../../../libraries/USART_library/code/headers
+SEARCH             += ../../../libraries/datastructures/code/headers
+USART             ?= ../../../libraries/USART_library
+include           $(USART)/Makefile.inc
+DATA              ?= ../../../libraries/datastructures
+include           $(USART)/Makefile.inc
+
+
 <p align="center">Hogeschool Utrecht</p>
 <p align="center">
   <img src="http://www.hu.nl/static/images/share.png" width="30%" height="30%">
