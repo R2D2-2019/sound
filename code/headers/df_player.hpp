@@ -1,7 +1,6 @@
 #pragma once
 
 #include "sound.hpp"
-
 #include <array>
 #include <hardware_usart.hpp>
 #include <hwlib.hpp>
