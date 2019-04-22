@@ -1,5 +1,4 @@
 #include "mp3_player.hpp"
-
 #include <cstring>
 #include <hwlib.hpp>
 
@@ -16,8 +15,6 @@ namespace r2d2::sound {
           repeat_pin(repeat_pin) {
         init();
     }
-
-    // mp3_player_c::~mp3_player_c() {}
 
     void mp3_player_c::init() {
         power_pin.write(false);
