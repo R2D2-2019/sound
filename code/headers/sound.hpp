@@ -20,7 +20,7 @@ namespace r2d2::sound {
         virtual void power_on(){};
 
         /**
-         * This function turns oof the mp3 player (Also stops music)
+         * This function turns off the mp3 player (Also stops music)
          *
          */
         virtual void power_off(){};
