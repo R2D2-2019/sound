@@ -7,7 +7,9 @@
 *.cbp
 *.lss
 *.exe
+*.lst
 .idea/
-.vs/
+.vscode/ipch/*
 cmake*/
-
+CMakeLists.txt
+settings.json
