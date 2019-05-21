@@ -1,11 +1,19 @@
-#include "mp3_player.hpp"
+//#include "mp3_player.hpp"
 #include <hwlib.hpp>
+#include <rtttl_player.hpp>
+#include <pin_out_note_player.hpp>
 
 int main(void) {
     // kill the watchdog
     WDT->WDT_MR = WDT_MR_WDDIS;
     hwlib::wait_ms(1000);
-    auto power = hwlib::target::pin_out(hwlib::target::pins::d3);
+    const char * let_it_be = "Beatles Let It Be:d=4,o=5,b=100:16e6,8d6,c6,16e6,8g6,8a6,8g.6,16g6,8g6,8e6,16d6,8c6,16a,8g,e.6,p,8e6,16e6,8f.6,8e6,8e6,8d6,16p,16e6,16d6,8d6,2c.6";
+    auto lsp = hwlib::target::pin_out( hwlib::target::pins::d7 );
+    auto p = r2d2::sound::pin_out_note_player_c(lsp);
+    auto player = r2d2::sound::rtttl_player_c(p);
+    player.rtttl_play(let_it_be);
+
+  /*  auto power = hwlib::target::pin_out(hwlib::target::pins::d3);
     auto repeat = hwlib::target::pin_oc(hwlib::target::pins::d4);
     auto mode = hwlib::target::pin_oc(hwlib::target::pins::d5);
     auto prev = hwlib::target::pin_oc(hwlib::target::pins::d6);
@@ -47,5 +55,5 @@ int main(void) {
             hwlib::cout << "Volume Down\n";
             sound_player.volume_down();
         }
-    }
+    }*/
 }
