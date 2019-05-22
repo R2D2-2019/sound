@@ -2,6 +2,7 @@
 #include <hwlib.hpp>
 #include <rtttl_player.hpp>
 #include <pin_out_note_player.hpp>
+#include <sound.hpp>
 
 int main(void) {
     // kill the watchdog
