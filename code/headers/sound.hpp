@@ -23,6 +23,10 @@ namespace r2d2::sound {
          */
         sound_c(base_comm_c & comm, rtttl_player_c & player);
 
+        /**
+         * @brief process is the process function
+         * @details listens for the correct frame and plays an rtttl string if it is send
+         */
         void process() override;
 
 };
