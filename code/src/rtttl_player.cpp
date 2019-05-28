@@ -12,11 +12,11 @@ namespace r2d2::sound {
 
     int frequencies[] = { 440, 494, 523, 587, 659, 698, 784 };
 
-    rtttl_player_c::rtttl_player_c(player_c &player):
+    rtttl_player_c::rtttl_player_c(note_player_c &player):
         player(player)
     {}
 
-    void rtttl_player_c::rtttl_play(const char *s) {
+    void rtttl_player_c::play() {
 
         int def_duration = 4, def_octave = 6, value;
         int duration, octave, frequency;
@@ -150,5 +150,9 @@ namespace r2d2::sound {
             }
         }
 
+    }
+
+    void rtttl_player_c::set_rtttl(const char *c) {
+        s = c;
     }
 }

@@ -23,7 +23,8 @@ namespace r2d2::sound {
                 frame_type::RTTTL_STRING
             >();
 
-            player.rtttl_play(data.rtttl_string);
+            player.set_rtttl(data.rtttl_string);
+            player.play();
 
         }
     }

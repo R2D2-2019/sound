@@ -1,3 +1,10 @@
+/**
+ * @file
+ * @brief pin_out_note_player class
+ * @details can play notes via an hwlib::pin_out
+ * @author Patrick Dekker
+ * @author David de Jong
+ */
 #pragma once
 
 namespace r2d2::sound {
@@ -22,8 +29,8 @@ namespace r2d2::sound {
     };
     
     /**
-     * struct notes_s
-     * Defines the data from a note_s
+     * @brief struct notes_s
+     * @details Defines the data from a note_s
      */
     struct note_s {
         /**
@@ -62,10 +69,10 @@ namespace r2d2::sound {
      * class note_player_c
      * Abstract class with play
      */  
-    class player_c {
+    class note_player_c {
     public:
         /**
-         * virtual play
+         * @brief virtual play
          * 
          * @param n - values from the class const note_s need to be used to override
          */ 

@@ -9,10 +9,7 @@ namespace r2d2::demo {
         const char c[155] = "H: d=4,o=5,b=108: 2a4, 2e, 2d#, 2b4, 2a4, 2c, 2d, 2a#4, 2e., e, 1f4, 1a4, 1d#, 2e., d, 2c., b4, 1a4, 1p, 2a4, 2e, 2d#, 2b4, 2a4, 2c, 2d, 2a#4, 2e., e, 1f4";
     public:
         controller_c(base_comm_c & comm, hwlib::pin_in & pin)
-            : base_module_c(comm), pin(pin) {
-
-            //comm.listen_for_frames();
-        }
+            : base_module_c(comm), pin(pin) {}
         void process() override {
             while (true) {
                 if (!pin.read()) {
@@ -20,13 +17,9 @@ namespace r2d2::demo {
                     
                     memcpy(&rtttl_str.rtttl_string, c, strlen(c) + 1);
                     comm.send<frame_rtttl_string_s>(rtttl_str);
-                    hwlib::cout << 1;
                     hwlib::wait_ms(100);
                 }
             }
         }
-
     };
-
-
 }

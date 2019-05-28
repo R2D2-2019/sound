@@ -1,5 +1,12 @@
+/**
+ * @file
+ * @brief mp3_player_c mp3 player class
+ * @details plays mp3 files
+ * @details can play notes via an hwlib::pin_out
+ * @author Olivier Verwoerd
+ */
 #pragma once
-#include "sound.hpp"
+#include "player.hpp"
 #include <array>
 #include <hwlib.hpp>
 

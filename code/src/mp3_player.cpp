@@ -1,6 +1,4 @@
 #include "mp3_player.hpp"
-#include <cstring>
-#include <hwlib.hpp>
 
 namespace r2d2::sound {
     mp3_player_c::mp3_player_c(hwlib::pin_out &power_pin,
