@@ -62,7 +62,7 @@ namespace r2d2::sound {
      * class note_player_c
      * Abstract class with play
      */  
-    class note_player_c {
+    class player_c {
     public:
         /**
          * virtual play

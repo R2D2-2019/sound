@@ -12,7 +12,7 @@ namespace r2d2::sound {
 
     int frequencies[] = { 440, 494, 523, 587, 659, 698, 784 };
 
-    rtttl_player_c::rtttl_player_c(note_player_c &player):
+    rtttl_player_c::rtttl_player_c(player_c &player):
         player(player)
     {}
 

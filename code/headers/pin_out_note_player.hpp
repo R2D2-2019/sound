@@ -9,7 +9,7 @@ namespace r2d2::sound {
      * class pin_out_note_player_c
      * Provides hardware connection to the arduino due with lsp.
      */
-    class pin_out_note_player_c : public note_player_c{
+    class pin_out_note_player_c : public player_c{
     private:
         hwlib::pin_out &lsp;
     public:

@@ -15,6 +15,7 @@ namespace r2d2::sound {
             auto frame = comm.get_data();
 
             if (frame.request) {
+                hwlib::cout << 1;
                 continue;
             }
 
