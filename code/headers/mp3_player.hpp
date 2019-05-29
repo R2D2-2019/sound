@@ -1,5 +1,12 @@
+/**
+ * @file
+ * @brief mp3_player_c mp3 player class
+ * @details plays mp3 files
+ * @details can play notes via an hwlib::pin_out
+ * @author Olivier Verwoerd
+ */
 #pragma once
-#include "sound.hpp"
+#include "player.hpp"
 #include <array>
 #include <hwlib.hpp>
 
@@ -7,7 +14,7 @@ namespace r2d2::sound {
     /**
      * Class mp3_player_c plays mp3 files.
      */
-    class mp3_player_c : public sound_c {
+    class mp3_player_c : public player_c {
     private:
         hwlib::pin_out &power_pin;
         hwlib::pin_oc &volume_up_next_pin;
@@ -114,55 +121,55 @@ namespace r2d2::sound {
          * This function outputs the play command if there is no song playing.
          *
          */
-        virtual void power_on() override;
+        virtual void power_on();
 
         /**
          * This function outputs the pause command if there is a song playing.
          *
          */
-        virtual void power_off() override;
+        virtual void power_off();
 
         /**
          * This function outputs the play command if there is no song playing.
          *
          */
-        virtual void play() override;
+        virtual void play();
 
         /**
          * This function outputs the pause command if there is a song playing.
          *
          */
-        virtual void pause() override;
+        virtual void pause();
 
         /**
          * This function outputs the previous sound command.
          *
          */
-        virtual void previous() override;
+        virtual void previous();
 
         /**
          * This function outputs the next sound command.
          *
          */
-        virtual void next() override;
+        virtual void next();
 
         /**
          * This function outputs the volume up command.
          *
          */
-        virtual void volume_up() override;
+        virtual void volume_up();
 
         /**
          * This function outputs the volume down command.
          *
          */
-        virtual void volume_down() override;
+        virtual void volume_down();
 
         /**
          * This function toggles repeat.
          *
          */
-        virtual void toggle_repeat() override;
+        virtual void toggle_repeat();
     };
 
 } // namespace r2d2::sound
