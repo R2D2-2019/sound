@@ -121,55 +121,55 @@ namespace r2d2::sound {
          * This function outputs the play command if there is no song playing.
          *
          */
-        virtual void power_on() ;
+        virtual void power_on();
 
         /**
          * This function outputs the pause command if there is a song playing.
          *
          */
-        virtual void power_off() ;
+        virtual void power_off();
 
         /**
          * This function outputs the play command if there is no song playing.
          *
          */
-        virtual void play() ;
+        virtual void play();
 
         /**
          * This function outputs the pause command if there is a song playing.
          *
          */
-        virtual void pause() ;
+        virtual void pause();
 
         /**
          * This function outputs the previous sound command.
          *
          */
-        virtual void previous() ;
+        virtual void previous();
 
         /**
          * This function outputs the next sound command.
          *
          */
-        virtual void next() ;
+        virtual void next();
 
         /**
          * This function outputs the volume up command.
          *
          */
-        virtual void volume_up() ;
+        virtual void volume_up();
 
         /**
          * This function outputs the volume down command.
          *
          */
-        virtual void volume_down() ;
+        virtual void volume_down();
 
         /**
          * This function toggles repeat.
          *
          */
-        virtual void toggle_repeat() ;
+        virtual void toggle_repeat();
     };
 
 } // namespace r2d2::sound
